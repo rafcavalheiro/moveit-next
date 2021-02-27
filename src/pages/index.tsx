@@ -13,6 +13,9 @@ import React from 'react';
 import { ChallengesProvider } from '../contexts/ChallengesContexts';
 import { Countdown } from '../components/Countdown';
 
+
+
+
 interface HomeProps {
   level: number;
   currentExperience: number;
@@ -20,9 +23,11 @@ interface HomeProps {
 }
 
 
+
 export default function Home(props: HomeProps) {
 
   return (
+
     <ChallengesProvider
       level={props.level}
       currentExperience={props.currentExperience}
@@ -33,6 +38,16 @@ export default function Home(props: HomeProps) {
         <Head>
           <title>Início | move.it</title>
         </Head>
+
+        <div>
+          <div className="switch__container">
+
+            <input id="switch-shadow" className="switch switch--shadow" type="checkbox" />
+            <label htmlFor="switch-shadow"></label>
+          </div>
+
+        </div>
+
 
         <ExperienceBar />
 
@@ -56,7 +71,7 @@ export default function Home(props: HomeProps) {
         </CountdownProvider>
 
       </div>
-    </ChallengesProvider>
+    </ChallengesProvider >
   )
 
 
